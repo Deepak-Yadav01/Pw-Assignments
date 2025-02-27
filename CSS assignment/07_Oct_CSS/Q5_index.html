@@ -1,0 +1,115 @@
+<!-- Explain the difference between justify-items and justify-self using code examples. -->
+
+<!-- In CSS Grid, `justify-items` and `justify-self` control horizontal alignment, but they apply at different levels:
+
+- **`justify-items`**: Sets the horizontal alignment for **all** grid items within a grid container.
+- **`justify-self`**: Sets the horizontal alignment for **a specific** grid item, overriding `justify-items`.
+
+---
+
+### 🔹 Example 1: `justify-items`
+The `justify-items` property applies **to all** grid items in a container.
+
+```html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify Items Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 100px);
+            justify-items: center; /* Aligns all grid items at the center horizontally */
+            gap: 10px;
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: steelblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+</body>
+</html>
+
+
+<br>
+
+<!-- ```
+🔹 **What happens?**  
+- Every grid item is centered **horizontally** within its grid cell.
+
+---
+
+### 🔹 Example 2: `justify-self`
+The `justify-self` property applies **only to a specific grid item**, allowing different alignments within the same grid.
+
+```html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justify Self Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 100px);
+            justify-items: start; /* Default alignment for all items */
+            gap: 10px;
+            background-color: lightgray;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: steelblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .special {
+            justify-self: end; /* Only this item aligns to the right */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item special">2</div> <!-- This item is right-aligned -->
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+</body>
+</html>
+
+<!-- ```
+🔹 **What happens?**  
+- All grid items **start from the left** (`justify-items: start`).
+- Only the second item (`.special`) moves **to the right** (`justify-self: end`).
+
+---
+
+### 🔥 Summary:
+| Property        | Applies to | Effect |
+|----------------|------------|--------|
+| `justify-items` | Grid Container | Aligns **all** grid items in their cells |
+| `justify-self` | Individual Grid Item | Aligns a **specific** item, overriding `justify-items` | -->
