@@ -1,0 +1,8 @@
+h1::before{
+    content: "pseudo";
+    color: blueviolet;
+}
+h1::after{
+    color: brown;
+    content: "selector";
+}

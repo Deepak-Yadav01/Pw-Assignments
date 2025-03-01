@@ -1,0 +1,15 @@
+button{
+    background-color:royalblue;
+    padding: 10px;
+    margin: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: none;
+    color: aliceblue; 
+}
+.with-hover:hover{
+    cursor: pointer;
+    width: 150px;
+    background-color: chartreuse;
+    color: red;
+}
